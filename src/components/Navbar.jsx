@@ -1,64 +1,41 @@
-import { FaUserAlt, FaHeart, FaShoppingBag } from "react-icons/fa";
-import { MdMessage } from "react-icons/md";
-import { IoMdCart } from "react-icons/io";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import { IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white border-b border-gray-200">
-      <div className="w-[80%] h-20 mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center gap-2 cursor-pointer">
-          <div className="bg-blue-500 p-2.5 shadow-[5px_0_0_#dae5fd] m-4 mr-0 rounded-lg">
-            <HiOutlineShoppingBag className="text-white text-xl" />
-          </div>
-          <span className="text-3xl font-bold text-[#8CB7F5]">Brand</span>
-        </div>
-
-        {/* Searchbar */}
-        <div className="flex items-center flex-1 max-w-2xl mx-8">
-          <input
-            className="w-full h-10 px-4 py-2 border-2 border-r-0 border-blue-500 rounded-l-md outline-none"
-            type="text"
-            placeholder="Search"
-          />
-          <div className="relative h-full">
-            <select
-              className="h-10 pl-1 pr-4 border-2 border-blue-500 border-r-0 outline-none cursor-pointer hover:bg-gray-50"
-              name="input-middle"
-              id="input-m"
-            >
-              <option value="All category">All category</option>
-              <option value="Electronics">Electronics</option>
-              <option value="Fashion">Fashion</option>
+    <div className="w-full border-b border-gray-200">
+      <div className="w-[80%] h-13 mx-auto px-2 flex justify-between items-center font-medium">
+        {/* Right */}
+        <div className="flex justify-between items-center">
+          <IoMdMenu size={24} className="mr-3 cursor-pointer" />
+          <div className="flex gap-8">
+            <a href="">All category</a>
+            <a href="">Hot offers</a>
+            <a href="">Gift boxes</a>
+            <a href="">Projects</a>
+            <a href="">Menu items</a>
+            <select className="pr-1 outline-none" name="dropDown1" id="">
+              <option value="Help">Help</option>
             </select>
           </div>
-          <button className="h-10 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-r-md tracking-wide">
-            Search
-          </button>
         </div>
-
-        {/* Icons */}
-        <div className="flex items-center gap-6">
-          <div className="flex flex-col items-center cursor-pointer text-gray-400">
-            <FaUserAlt size={20} />
-            <span className="text-xs mt-1">Profile</span>
+        {/* Left */}
+        <div className="flex justify-between items-center gap-8">
+          <div className="">
+            <select className="pr-1 outline-none" name="dropDownLanguage" id="">
+              <option value="English, USD">English, USD</option>
+              <option value="English, USD">English, UK</option>
+            </select>
           </div>
-          <div className="flex flex-col items-center cursor-pointer text-gray-400">
-            <MdMessage size={22} />
-            <span className="text-xs mt-1">Message</span>
-          </div>
-          <div className="flex flex-col items-center cursor-pointer text-gray-400">
-            <FaHeart size={20} />
-            <span className="text-xs mt-1">Orders</span>
-          </div>
-          <div className="flex flex-col items-center cursor-pointer text-gray-400">
-            <IoMdCart size={22} />
-            <span className="text-xs mt-1">My Cart</span>
+          <div className="">
+            <select className="pr-1 outline-none" name="dropDownCountry" id="">
+              <option value="Germany">Ship to US</option>
+              <option value="USA">Ship to UK</option>
+              <option value="UK">Ship to DE</option>
+            </select>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 
