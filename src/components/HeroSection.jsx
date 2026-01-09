@@ -24,7 +24,7 @@ const HeroSection = () => {
           {/* Left - Sidebar */}
           <div className="w-64 shrink-0">
             <ul className="space-y-1">
-              {categories.map((cat, index) => (
+              {categories.map((category, index) => (
                 <li
                   key={index}
                   onClick={() => setActiveCategory(index)}
@@ -34,7 +34,7 @@ const HeroSection = () => {
                       : "hover:text-black"
                   }`}
                 >
-                  {cat}
+                  {category}
                 </li>
               ))}
             </ul>
