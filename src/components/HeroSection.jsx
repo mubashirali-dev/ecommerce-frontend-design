@@ -18,7 +18,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="w-full flex justify-center py-5">
+    <div className="w-full flex justify-center pt-5">
       <div className="w-[80%] mx-auto">
         <div className="border border-gray-200 rounded-md p-4 flex gap-4 min-h-100">
           {/* Left - Sidebar */}

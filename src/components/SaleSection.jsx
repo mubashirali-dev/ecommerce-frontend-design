@@ -14,32 +14,39 @@ const SaleSection = () => {
     { name: "Canon cameras", image: cancam, discount: 25 },
   ];
 
+  //   Setting Date & Time
+  const [dealEndTime] = useState(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 2);
+    return date;
+  });
+
   //   Calculating Sale Time
   const calculateTimeLeft = (targetDate) => {
     const difference = targetDate - new Date();
 
+    const format = (num) => num.toString().padStart(2, "0");
+
     if (difference <= 0) {
       return {
-        days: 0,
-        hours: 0,
-        min: 0,
-        sec: 0,
+        days: "00",
+        hours: "00",
+        min: "00",
+        sec: "00",
       };
     }
 
     return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      min: Math.floor((difference / 1000 / 60) % 60),
-      sec: Math.floor((difference / 1000) % 60),
+      days: format(Math.floor(difference / (1000 * 60 * 60 * 24))),
+      hours: format(Math.floor((difference / (1000 * 60 * 60)) % 24)),
+      min: format(Math.floor((difference / 1000 / 60) % 60)),
+      sec: format(Math.floor((difference / 1000) % 60)),
     };
   };
 
-  //   Setting Date & Time
-  const dealEndTime = new Date();
-  dealEndTime.setDate(dealEndTime.getDate() + 2);
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(dealEndTime));
+  const [timeLeft, setTimeLeft] = useState(() =>
+    calculateTimeLeft(dealEndTime)
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,17 +54,17 @@ const SaleSection = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [dealEndTime]);
 
   return (
-    <div className="mb-20 w-full flex items-center justify-center">
+    <div className="w-full pt-5 flex items-center justify-center">
       <div className="w-[80%] mx-auto flex border-2 border-gray-200 rounded-md">
         {/* Time */}
-        <div className="p-4 pr-15 shrink-0">
-          <h3 className="font-medium text-lg">Deals and Offer</h3>
-          <p className="text-sm text-gray-500">Hygiene equipments</p>
+        <div className="p-5 pr-15 shrink-0">
+          <h3 className="font-medium text-xl">Deals and Offer</h3>
+          <p className="text-sm text-gray-500 leading-3">Hygiene equipments</p>
           {/* Countdown */}
-          <div className="flex gap-2 mt-3">
+          <div className="flex gap-2 mt-6">
             {Object.entries(timeLeft).map(([label, value]) => (
               <div
                 key={label}
@@ -75,7 +82,7 @@ const SaleSection = () => {
           {items.map((item, index) => (
             <div
               key={index}
-              className="p-4 px-6 flex flex-col items-center justify-center border-l-2 border-gray-200"
+              className="p-5 px-6 flex flex-col items-center justify-center border-l-2 border-gray-200"
             >
               <img
                 src={item.image}
