@@ -75,7 +75,7 @@ const RecommendedSection = () => {
   return (
     <div className="w-full pt-8">
       <div className="w-[80%] mx-auto">
-        <h2 className="pb-8 text-3xl font-semibold">Our extra service</h2>
+        <h2 className="pb-8 text-3xl font-semibold">Recommended items</h2>
         <div className="grid grid-cols-5 gap-5">
           {products.map((product, index) => (
             <div

@@ -42,7 +42,7 @@ const ServiceSection = () => {
   return (
     <div className="w-full pt-8">
       <div className="w-[80%] mx-auto">
-        <h2 className="pb-8 text-3xl font-semibold">Recommended items</h2>
+        <h2 className="pb-6 text-3xl font-semibold">Our extra Services</h2>
         <div className="grid grid-cols-4 gap-4">
           {services.map((service, index) => (
             <div key={index} className="flex flex-col rounded-md">

@@ -15,6 +15,7 @@ const Home = () => {
       <InquirySection />
       <RecommendedSection />
       <ServiceSection />
+      <CountrySection />
     </div>
   );
 };

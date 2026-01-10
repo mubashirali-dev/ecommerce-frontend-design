@@ -67,16 +67,19 @@ const CountrySection = () => {
   ];
 
   return (
-    <div className=" mb-30 w-full pt-8">
+    <div className="w-full pt-6">
       <div className="w-[80%] mx-auto">
-        <h2 className="pb-8 text-3xl font-semibold">Suppliers by region</h2>
+        <h2 className="pb-6 text-3xl font-semibold">Suppliers by region</h2>
         <div className="grid grid-cols-5 gap-5">
           {countries.map((country, index) => (
-            <div key={index} className="flex">
-              <div>
+            <div key={index} className="flex items-center gap-3">
+              <div className="flex items-center justify-center">
                 <img src={country.flag} alt="" />
               </div>
-              <div></div>
+              <div className="pb-2">
+                <p className="text-lg">{country.name}</p>
+                <p className="text-gray-400 leading-2">{country.url}</p>
+              </div>
             </div>
           ))}
         </div>
