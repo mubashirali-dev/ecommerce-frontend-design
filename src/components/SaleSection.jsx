@@ -57,7 +57,7 @@ const SaleSection = () => {
   }, [dealEndTime]);
 
   return (
-    <div className="w-full pt-5 flex items-center justify-center">
+    <div className="w-full pt-8 flex items-center justify-center">
       <div className="w-[80%] mx-auto flex border-2 border-gray-200 rounded-md">
         {/* Time */}
         <div className="p-5 pr-15 shrink-0">

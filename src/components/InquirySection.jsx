@@ -3,7 +3,7 @@ import inquiryimg from "../assets/Image/backgrounds/inquiryimg.png";
 
 const InquirySection = () => {
   return (
-    <div className="w-full pt-5">
+    <div className="w-full pt-6">
       <div className="w-[80%] h-120 mx-auto rounded-md">
         <div
           className="w-full flex bg-center bg-cover bg-no-repeat overflow-hidden rounded-md"
