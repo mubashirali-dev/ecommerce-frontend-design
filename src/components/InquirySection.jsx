@@ -4,9 +4,9 @@ import inquiryimg from "../assets/Image/backgrounds/inquiryimg.png";
 const InquirySection = () => {
   return (
     <div className="w-full pt-6">
-      <div className="w-[80%] h-120 mx-auto rounded-md">
+      <div className="w-[80%] mx-auto rounded-md">
         <div
-          className="w-full flex bg-center bg-cover bg-no-repeat overflow-hidden rounded-md"
+          className="w-full h-110 flex bg-center bg-cover bg-no-repeat overflow-hidden rounded-md"
           style={{ backgroundImage: `url(${inquiryimg})` }}
         >
           {/* Left Text */}
@@ -52,7 +52,7 @@ const InquirySection = () => {
                   </select>
                 </div>
               </div>
-              <button className="w-fit px-4 py-2 bg-blue-500 text-white rounded-md cursor-pointer">
+              <button className="w-fit mb-2 px-4 py-2 bg-blue-500 text-white rounded-md cursor-pointer">
                 Send inquiry
               </button>
             </form>
