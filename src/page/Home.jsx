@@ -1,4 +1,5 @@
 import HeroSection from "../components/HeroSection";
+import InquirySection from "../components/inquirySection";
 import ItemSection from "../components/ItemSection";
 import SaleSection from "../components/SaleSection";
 
@@ -8,6 +9,7 @@ const Home = () => {
       <HeroSection />
       <SaleSection />
       <ItemSection />
+      <InquirySection />
     </div>
   );
 };
