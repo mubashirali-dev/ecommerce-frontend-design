@@ -54,12 +54,18 @@ const CountrySection = () => {
     },
     {
       id: 8,
+      flag: flag1,
+      name: "Arabic Emirates",
+      url: "shopname.ae",
+    },
+    {
+      id: 9,
       flag: flag8,
       name: "China",
       url: "shopname.ae",
     },
     {
-      id: 9,
+      id: 10,
       flag: flag9,
       name: "Great Britain",
       url: "shopname.co.uk",
