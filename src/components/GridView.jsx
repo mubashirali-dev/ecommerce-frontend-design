@@ -2,9 +2,12 @@ import React from "react";
 import { IoIosStar } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa";
 
-const GridView = ({ product }) => {
+const GridView = ({ product, onClick }) => {
   return (
-    <div className="bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow bg-white h-full flex flex-col justify-between overflow-hidden">
+    <div 
+        className="bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow bg-white h-full flex flex-col justify-between overflow-hidden cursor-pointer"
+        onClick={onClick}
+    >
         
       {/* Image Container */}
       <div className="flex justify-center items-center h-[280px] py-8 border-b border-gray-100">
@@ -23,7 +26,13 @@ const GridView = ({ product }) => {
                 <span className="text-gray-400 line-through">${product.originalPrice}</span>
             </div>
              {/* Heart Icon Button */}
-            <div className="p-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50 text-blue-500">
+            <div 
+                className="p-2 border border-gray-300 rounded-md cursor-pointer hover:bg-gray-50 text-blue-500"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    // Add wishlist logic here later
+                }}
+            >
                 <FaRegHeart />
             </div>
         </div>

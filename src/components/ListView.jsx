@@ -1,9 +1,12 @@
 import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa";
 
-const ListView = ({ product }) => {
+const ListView = ({ product, onClick }) => {
   return (
-    <div className="flex bg-white border border-gray-200 rounded-md p-5 mb-4 hover:shadow-md transition-shadow">
+    <div 
+      className="flex bg-white border border-gray-200 rounded-md p-5 mb-4 hover:shadow-md transition-shadow cursor-pointer"
+      onClick={onClick}
+    >
       {/* Image */}
       <div className="w-[160px] h-[160px] flex-shrink-0 flex items-center justify-center mr-6 p-2">
         <img
@@ -21,7 +24,12 @@ const ListView = ({ product }) => {
             <h3 className="text-[17px] font-medium hover:text-blue-600 cursor-pointer">
               {product.name}
             </h3>
-            <button className="text-blue-500 hover:text-blue-600 transition-colors bg-white border border-gray-200 rounded p-2 outline-none shadow-sm cursor-pointer">
+            <button 
+                className="text-blue-500 hover:text-blue-600 transition-colors bg-white border border-gray-200 rounded p-2 outline-none shadow-sm cursor-pointer"
+                onClick={(e) => {
+                    e.stopPropagation();
+                }}
+            >
                <FaRegHeart />
             </button>
           </div>

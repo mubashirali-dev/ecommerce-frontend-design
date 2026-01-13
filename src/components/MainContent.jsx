@@ -13,7 +13,7 @@ import product6 from "../assets/products/product6.png";
 import product7 from "../assets/products/product7.png";
 import product8 from "../assets/products/product8.png";
 
-const MainContent = ({ activeFilters, toggleFilter, clearFilters }) => {
+const MainContent = ({ activeFilters, toggleFilter, clearFilters, onProductClick }) => {
   const [view, setView] = React.useState("list");
     
 
@@ -232,9 +232,9 @@ const MainContent = ({ activeFilters, toggleFilter, clearFilters }) => {
       <div className={`${view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4' : ''}`}>
         {currentProducts.map((product) => (
             view === 'grid' ? (
-                <GridView key={product.id} product={product} />
+                <GridView key={product.id} product={product} onClick={onProductClick} />
             ) : (
-                <ListView key={product.id} product={product} />
+                <ListView key={product.id} product={product} onClick={onProductClick} />
             )
         ))}
       </div>

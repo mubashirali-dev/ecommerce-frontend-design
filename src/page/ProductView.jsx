@@ -3,7 +3,7 @@ import BreadCrumb from "../components/BreadCrumb";
 import Sidebar from "../components/Sidebar";
 import MainContent from "../components/MainContent";
 
-const ProductView = () => {
+const ProductView = ({ onBack, onProductClick }) => {
   const [activeFilters, setActiveFilters] = React.useState([]);
 
   const toggleFilter = (filter) => {
@@ -20,7 +20,7 @@ const ProductView = () => {
 
   return (
     <div className="w-full pb-10 bg-[#F7FAFC]">
-      <BreadCrumb />
+      <BreadCrumb onBack={onBack} />
       
       <div className="w-[80%] mx-auto flex gap-6 align-start">
         {/* Sidebar */}
@@ -30,7 +30,8 @@ const ProductView = () => {
         <MainContent 
             activeFilters={activeFilters} 
             toggleFilter={toggleFilter} 
-            clearFilters={clearFilters} 
+            clearFilters={clearFilters}
+            onProductClick={onProductClick} 
         />
       </div>
     </div>

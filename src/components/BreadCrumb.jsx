@@ -1,10 +1,13 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const BreadCrumb = () => {
+const BreadCrumb = ({ onBack }) => {
   return (
     <div className="w-full">
       <div className="w-[80%] mx-auto flex items-center space-x-2 text-sm text-gray-500 py-5">
-        <span className="hover:text-gray-800 cursor-pointer transition-colors">
+        <span 
+          className="hover:text-gray-800 cursor-pointer transition-colors"
+          onClick={onBack}
+        >
           Home
         </span>
         <MdKeyboardArrowRight className="text-gray-400 text-lg" />

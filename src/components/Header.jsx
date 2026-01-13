@@ -3,7 +3,7 @@ import { MdMessage } from "react-icons/md";
 import { IoMdCart } from "react-icons/io";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
-const Header = () => {
+const Header = ({ onSearch }) => {
   return (
     <nav className="w-full bg-white border-b border-gray-200">
       <div className="w-[80%] h-20 mx-auto px-2 py-4 flex justify-between items-center">
@@ -33,7 +33,10 @@ const Header = () => {
               <option value="Fashion">Fashion</option>
             </select>
           </div>
-          <button className="h-10 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-r-md tracking-wide">
+          <button 
+            className="h-10 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-r-md tracking-wide cursor-pointer"
+            onClick={onSearch}
+          >
             Search
           </button>
         </div>
