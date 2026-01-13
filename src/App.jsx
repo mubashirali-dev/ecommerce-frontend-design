@@ -4,13 +4,15 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Newsletter from "./components/Newsletter";
 import Home from "./page/Home";
+import ProductView from "./page/ProductView";
 
 function App() {
   return (
     <div>
       <Header />
       <Navbar />
-      <Home />
+      {/* <Home /> */}
+      <ProductView />
       <Newsletter />
       <Footer />
     </div>
