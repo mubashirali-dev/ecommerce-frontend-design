@@ -33,7 +33,7 @@ const Header = ({ onSearch }) => {
               <option value="Fashion">Fashion</option>
             </select>
           </div>
-          <button 
+          <button
             className="h-10 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-r-md tracking-wide cursor-pointer"
             onClick={onSearch}
           >

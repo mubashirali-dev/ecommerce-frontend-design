@@ -86,7 +86,7 @@ const Footer = () => {
           {/* Left Copyright */}
           <p>© 2023 Ecommerce.</p>
           {/* Right Country */}
-          <select name="" id="">
+          <select name="" id="" className="outline-none">
             <option value="English">English</option>
           </select>
         </div>
